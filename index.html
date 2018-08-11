@@ -57,6 +57,8 @@
       <source src="jaya/music.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
+     <iframe src="jaya/music.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+</iframe> 
 <!--
     For example this fallback message is only visible when there is `impress-not-supported` class on body.
 -->
@@ -305,6 +307,12 @@ if ("ontouchstart" in document.documentElement) {
      player.api_play();
    });
 </script>
+</script>
+<script>
+	var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if(!isChrome){
+      $('#iframeAudio').remove()
+    }
 </script>
 </body>
 </html>
